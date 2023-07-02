@@ -19,7 +19,7 @@ hbs.registerPartials(partialsPath)
 app.get('',(req,res)=>{
     res.render('index',{
         name:'Weather App Hizmetinizde',
-        news:'ben varim ',
+        news:'You can find out the tempeture of where you are ',
         foot:'pls rate us!'
     })
 })
@@ -27,7 +27,7 @@ app.get('',(req,res)=>{
 app.get('/about',(req,res)=>{
     res.render('about',{
         name:'About kismindasiniz',
-        news:'ve buradan çikmalisiniz ' ,
+        news:'For this page, we take data from weather-stack and mapbox.com ' ,
         foot:'created by uğur küsmen!'
     })
 
