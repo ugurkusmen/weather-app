@@ -5,7 +5,7 @@ const geocode = require('./utils/geocode.js')
 const forecast = require('./utils/forecast.js')
 
 const app = express()
-
+const port = process.env.PORT || 3000
 
 const publicDirect = path.join(__dirname,'../public')
 const viewPath = path.join(__dirname,'../templates/views')
@@ -35,8 +35,8 @@ app.get('/about',(req,res)=>{
 
 app.get('/help',(req,res)=>{
     res.render('help',{
-        name:'ohh if yo came here there will be a problem ',
-        news:'malesef yapay bir robotumuz yok ',
+        name:'ohh if you came here there will be a problem ',
+        news:'Try to enter correct url or go the main page ',
         foot:'you can mail us!'
     })
 })
@@ -86,14 +86,14 @@ app.get('/weather',(req,res)=>{
 
 app.get('/*',(req,res)=>{
     res.render('404',{
-        name:'Uups 404 not found page has arrived here :( ',
-        news:'if wish i can help you but there is not suck a page :(',
+        name:'Uups 404 not found page :( ',
+        news:'You cant find anythink here. You can go back to main page :(',
         foot:'you can mail us!'
     })
 })
 
 
 
-app.listen(3000,()=>{
-    console.log('server is running')
-})
+app.listen(port,()=>{
+    console.log('server is running on '+ port)
+}).addListener
